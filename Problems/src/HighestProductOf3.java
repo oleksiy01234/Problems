@@ -1,23 +1,21 @@
 class HighestProductOf3 {
 
-  static void test() {
-    int[] a = new int[] { 1, -2, 0, 3, 4, 2, 4, -5, 10 };
-
-    HighestProductOf3 hOf3 = new HighestProductOf3();
-    System.out.println(hOf3.solve(a));
+  public static void main(String[] args) {
+    int[] a = new int[] { 1, -2, 0, 1, 4, 2, 4, -5, 4 };
+    System.out.println(solve(a));  
   }
 
-  private int solve(int[] a) {
+  private static int solve(int[] a) {
     if (a.length < 3) {
       throw new IllegalArgumentException("Array must have at least 3 items.");
     }
-    
+
     int max = Util.max(a[0], a[1], a[2]);
     int min = Util.min(a[0], a[1], a[2]);
-    
+
     int max2 = Util.max(a[0] * a[1], a[1] * a[2], a[0] * a[2]);
     int min2 = Util.min(a[0] * a[1], a[1] * a[2], a[0] * a[2]);
-    
+
     int max3 = a[0] * a[1] * a[3];
 
     for (int i = 3; i < a.length; i++) {
