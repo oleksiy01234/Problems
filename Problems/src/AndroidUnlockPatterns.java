@@ -1,4 +1,3 @@
-
 class AndroidUnlockPatterns {
 
   public static void main(String[] args) {
