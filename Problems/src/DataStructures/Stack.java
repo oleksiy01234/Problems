@@ -1,5 +1,6 @@
 package DataStructures;
 
+import DataStructures.Node.Node;
 import Util.Util;
 
 class Stack {

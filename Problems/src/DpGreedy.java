@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 
-import DataStructures.Node;
+import DataStructures.Node.Node;
 import Util.Util;
 
 class DpGreedy {

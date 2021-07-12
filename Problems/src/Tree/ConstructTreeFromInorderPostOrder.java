@@ -1,6 +1,6 @@
 package Tree;
 
-import Util.TreeNode;
+import DataStructures.Node.TreeNode;
 
 public class ConstructTreeFromInorderPostOrder {
   public TreeNode buildTree(int[] inorder, int[] postorder) {

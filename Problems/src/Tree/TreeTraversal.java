@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-import Util.TreeNode;
+import DataStructures.Node.TreeNode;
 
 class TreeTraversal {
   public List<Integer> preorderTraversal(TreeNode n) {

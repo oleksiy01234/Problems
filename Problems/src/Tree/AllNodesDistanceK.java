@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-import Util.TreeNode;
+import DataStructures.Node.TreeNode;
 
 /**
  * 863. All Nodes Distance K in Binary Tree

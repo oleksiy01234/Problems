@@ -3,7 +3,7 @@ package Tree;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import Util.TreeNode;
+import DataStructures.Node.TreeNode;
 
 class DoesNodeExist {
   static final int ROOT_INDEX = 1;

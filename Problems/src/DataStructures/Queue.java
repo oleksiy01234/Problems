@@ -1,5 +1,7 @@
 package DataStructures;
 
+import DataStructures.Node.Node;
+
 class Queue {
 	Node head;
 	Node tail;

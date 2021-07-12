@@ -5,7 +5,7 @@ import java.util.Stack;
 
 import DataStructures.Bst;
 import DataStructures.Heap;
-import DataStructures.Node;
+import DataStructures.Node.Node;
 import Util.Util;
 
 class TreeTest {

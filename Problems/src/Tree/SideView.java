@@ -1,9 +1,9 @@
 package Tree;
 
+import DataStructures.Node.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import Util.TreeNode;
 
 /**
  * SideView

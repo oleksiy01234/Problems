@@ -3,6 +3,7 @@ package DataStructures;
 import java.util.HashSet;
 import java.util.Set;
 
+import DataStructures.Node.Node;
 import Util.Util;
 
 class LinkedList {

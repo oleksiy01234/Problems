@@ -2,7 +2,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 import DataStructures.LRUCache;
-import DataStructures.Node;
+import DataStructures.Node.Node;
 import Util.Util;
 
 class LinkedListTest {

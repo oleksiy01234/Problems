@@ -1,9 +1,9 @@
 package Tree;
 
+import DataStructures.Node.TreeNode;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import Util.TreeNode;
 
 public class ConstructTreeFromPreorderInorder {
   private int index = 0;

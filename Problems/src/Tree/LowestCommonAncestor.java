@@ -2,7 +2,7 @@ package Tree;
 
 import java.util.Stack;
 
-import Util.TreeNode;
+import DataStructures.Node.TreeNode;
 
 public class LowestCommonAncestor {
   static TreeNode lowestCommonAncestorNoStack(TreeNode root, TreeNode n1, TreeNode n2) {

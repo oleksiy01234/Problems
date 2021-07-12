@@ -3,7 +3,7 @@ package Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import Util.TreeNode;
+import DataStructures.Node.TreeNode;
 
 public class SerializeTree {
 

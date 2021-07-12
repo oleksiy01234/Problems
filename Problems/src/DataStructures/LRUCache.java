@@ -1,5 +1,7 @@
 package DataStructures;
 
+import DataStructures.Node.Node;
+
 import java.util.HashMap;
 import java.util.Map;
 
