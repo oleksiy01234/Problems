@@ -13,7 +13,7 @@ public class ThreeSum {
   /**
    * Find all unique triplets that sum up to k.
    */
-  List<List<Integer>> threeSum(int[] a, int k) {
+  private List<List<Integer>> threeSum(int[] a, int k) {
     List<List<Integer>> result = new ArrayList<>();
     Arrays.sort(a);
 
@@ -28,7 +28,11 @@ public class ThreeSum {
 
       while (start < end) {
 
-        if (a[start] + a[end] == target) {
+        if (a[start] + a[end] > target) {
+          end--; // sum is too high: decrement end
+        } else if (a[start] + a[end] < target) {
+          start++; // sum is too low: increment start
+        } else {
           result.add(Arrays.asList(a[i], a[start], a[end]));
 
           do {
@@ -39,10 +43,6 @@ public class ThreeSum {
             end--; // loop backward until we encounter a different element
           } while (start < end && a[end] == a[end + 1]);
 
-        } else if (a[start] + a[end] > target) {
-          end--; // sum is too high: decrement end
-        } else {
-          start++; // sum is too low: increment start
         }
       }
     }
