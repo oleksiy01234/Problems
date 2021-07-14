@@ -1,10 +1,8 @@
 package Array;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.AbstractMap.SimpleImmutableEntry;
+import java.util.TreeMap;
 
 class RomanNumerals {
   public static void main(String[] args) {
@@ -12,20 +10,20 @@ class RomanNumerals {
     System.out.println(intToRoman(1992));
   }
 
-  private static int romanToInt(String s) {
+  public static int romanToInt(String s) {
     Map<Character, Integer> romanNumerals = generateMap();
-    int result = 0;
+    int res = 0;
 
     for (int i = 0; i < s.length(); i++) {
       int thisValue = romanNumerals.get(s.charAt(i));
       if (i < s.length() - 1 && thisValue < romanNumerals.get(s.charAt(i + 1))) {
-        result -= thisValue;
+        res -= thisValue;
       } else {
-        result += thisValue;
+        res += thisValue;
       }
     }
 
-    return result;
+    return res;
   }
 
   private static Map<Character, Integer> generateMap() {
@@ -42,38 +40,38 @@ class RomanNumerals {
     return romanNumerals;
   }
 
-  private static String intToRoman(int n) {
-    List<SimpleImmutableEntry<Integer, String>> map = generateIntMap();
+  public static String intToRoman(int n) {
+    Map<Integer, String> map = generateIntMap();
     StringBuilder sb = new StringBuilder();
 
-    for (SimpleImmutableEntry<Integer, String> entry : map) {
-      while (n >= entry.getKey()) {
-        sb.append(entry.getValue());
-        n -= entry.getKey();
+    for (int key : map.keySet()) {
+      while (n >= key) {
+        sb.append(map.get(key));
+        n -= key;
       }
     }
 
     return sb.toString();
   }
 
-  private static List<SimpleImmutableEntry<Integer, String>> generateIntMap() {
-    List<SimpleImmutableEntry<Integer, String>> list = new ArrayList<>();
+  private static Map<Integer, String> generateIntMap() {
+    Map<Integer, String> map = new TreeMap<>((o1, o2) -> o2 - o1);
 
-    list.add(new SimpleImmutableEntry<>(1000, "M"));
-    list.add(new SimpleImmutableEntry<>(900, "CM"));
-    list.add(new SimpleImmutableEntry<>(500, "D"));
-    list.add(new SimpleImmutableEntry<>(400, "CD"));
-    list.add(new SimpleImmutableEntry<>(100, "C"));
-    list.add(new SimpleImmutableEntry<>(90, "XC"));
-    list.add(new SimpleImmutableEntry<>(50, "L"));
-    list.add(new SimpleImmutableEntry<>(40, "XL"));
-    list.add(new SimpleImmutableEntry<>(10, "X"));
-    list.add(new SimpleImmutableEntry<>(9, "IX"));
-    list.add(new SimpleImmutableEntry<>(5, "V"));
-    list.add(new SimpleImmutableEntry<>(4, "IV"));
-    list.add(new SimpleImmutableEntry<>(1, "I"));
+    map.put(1000, "M");
+    map.put(900, "CM");
+    map.put(500, "D");
+    map.put(400, "CD");
+    map.put(100, "C");
+    map.put(90, "XC");
+    map.put(50, "L");
+    map.put(40, "XL");
+    map.put(10, "X");
+    map.put(9, "IX");
+    map.put(5, "V");
+    map.put(4, "IV");
+    map.put(1, "I");
 
-    return list;
+    return map;
   }
 
 }
