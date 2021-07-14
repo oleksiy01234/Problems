@@ -4,16 +4,6 @@ import java.util.BitSet;
 import java.util.Scanner;
 
 class BitTest {
-	static int singleNumber(int[] a) {
-		int result = 0;
-
-		for (int i : a) {
-			result ^= i;
-		}
-
-		return result;
-	}
-
 	public static long numberOfInts = ((long) Integer.MAX_VALUE) + 1;
 	public static byte[] bitfield = new byte[(int) (numberOfInts / 8)];
 
