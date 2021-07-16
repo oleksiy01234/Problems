@@ -36,22 +36,9 @@ public class MinDeletionsToMakeFrequenciesUnique {
   // pq solution
   public int minDeletions(String s) {
     Map<Character, Integer> frequencies = toMap(s);
-    // COMPARATOR SYNTAX
-    PriorityQueue<String> pq1 = new PriorityQueue<>(new Comparator<>() {
-      @Override
-      public int compare(String o1, String o2) {
-        return Integer.parseInt(o1 + o2) - Integer.parseInt(o2 + o1);
-      }
-    });
 
     PriorityQueue<Character> pq = new PriorityQueue<>((c1, c2) -> frequencies.get(c2) - frequencies.get(c1));
     pq.addAll(frequencies.keySet());
-
-    // PRINTING TO VERIFY
-    //System.out.println("Map: " + frequencies);
-    //while (!pq.isEmpty()) {
-    //    System.out.print(pq.poll() + " ");
-    //}
 
     int count = 0;
     while (!pq.isEmpty()) {
