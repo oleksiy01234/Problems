@@ -32,11 +32,11 @@ class MyCircularQueue {
     return true;
   }
 
-  public int Front() {
+  public int getFront() {
     return isEmpty() ? -1 : queue[headIndex];
   }
 
-  public int Rear() {
+  public int getRear() {
     return isEmpty() ? -1 : queue[tailIndex];
   }
 
