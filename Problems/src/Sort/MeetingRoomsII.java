@@ -25,6 +25,7 @@ public class MeetingRoomsII {
     PriorityQueue<IntervalPoint> pq = new PriorityQueue<>(new Comparator<>() {
       @Override
       public int compare(IntervalPoint i1, IntervalPoint i2) {
+        // if timestamp is the same, we want to first see endTime (so room can be freed), then start
         if (i1.timestamp == i2.timestamp) {
           return i1.start ? 1 : -1;
         }

@@ -521,34 +521,4 @@ class SearchAndSort {
       }
     }
   }
-
-  private class Interval {
-    int start;
-    int end;
-  }
-
-  public int minMeetingRooms(Interval[] intervals) {
-    Arrays.asList(intervals).sort(new Comparator<Interval>() {
-      @Override
-      public int compare(Interval o1, Interval o2) {
-        return o1.start - o2.start;
-      }
-    });
-
-    if (intervals.length == 0) {
-      return 0;
-    }
-
-    PriorityQueue<Integer> q = new PriorityQueue<>();
-    q.add(intervals[0].end);
-
-    for (Interval i : intervals) {
-      if (i.start >= q.peek()) {
-        q.poll();
-      }
-      q.add(i.end);
-    }
-
-    return q.size();
-  }
 }
