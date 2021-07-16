@@ -6,21 +6,21 @@ import java.util.Set;
 import DataStructures.Node.Node;
 import Util.Util;
 
-class LinkedList {
+class MyLinkedList {
 	Node head;
 
-	LinkedList() {
+	MyLinkedList() {
 	}
 
-	LinkedList(int data) {
+	MyLinkedList(int data) {
 		append(data);
 	}
 
-	LinkedList append(int data) {
+	MyLinkedList append(int data) {
 		return append(new Node(data));
 	}
 
-	LinkedList append(Node n) {
+	MyLinkedList append(Node n) {
 		if (head == null) {
 			head = n;
 			return this;
