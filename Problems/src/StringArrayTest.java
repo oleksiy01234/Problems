@@ -183,30 +183,6 @@ class StringArrayTest {
     System.out.println(charArray);
   }
 
-  static void reverseWords(String s) {
-    Stack<Integer> spaceIndices = new Stack<>();
-    spaceIndices.push(0);
-
-    for (int i = 0; i < s.length(); i++) {
-      if (s.charAt(i) == ' ') {
-        spaceIndices.push(i);
-        spaceIndices.push(i + 1);
-      }
-    }
-
-    spaceIndices.push(s.length());
-
-    StringBuilder sb = new StringBuilder();
-
-    while (!spaceIndices.isEmpty()) {
-      int endIndex = spaceIndices.pop();
-      int startIndex = spaceIndices.pop();
-      sb.append(s, startIndex, endIndex).append(" ");
-    }
-
-    System.out.println(sb);
-  }
-
   static void rotateLeft(int[] a, int k) {
     Util.print(a);
     while (k < 0) {
