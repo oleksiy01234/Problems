@@ -70,7 +70,7 @@ public class IntegerToEnglish {
   public String convert1To999(int num) {
     int hundred = num / 100;
     int rest = num % 100;
-    String res = "";
+    String res;
 
     if (hundred != 0 && rest != 0) {
       res = convert1To9(hundred) + " Hundred " + convert1To99(rest);
