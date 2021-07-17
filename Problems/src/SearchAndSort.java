@@ -509,16 +509,4 @@ class SearchAndSort {
       Util.swap(a, randomIndex, i);
     }
   }
-
-  public static void reverseWords(char[] a) {
-    Util.reverse(a, 0, a.length - 1);
-
-    int start = 0;
-    for (int i = 1; i <= a.length; i++) {
-      if (i - start > 1 && (i == a.length || a[i] == ' ')) {
-        Util.reverse(a, start, i - 1);
-        start = i + 1;
-      }
-    }
-  }
 }
