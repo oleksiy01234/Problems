@@ -3,49 +3,79 @@ package Conversion;
 public class IntegerToEnglish {
   // convert single digit into a string
   public String convert1To9(int num) {
-    return switch (num) {
-      case 1 -> "One";
-      case 2 -> "Two";
-      case 3 -> "Three";
-      case 4 -> "Four";
-      case 5 -> "Five";
-      case 6 -> "Six";
-      case 7 -> "Seven";
-      case 8 -> "Eight";
-      case 9 -> "Nine";
-      default -> "";
-    };
+    switch (num) {
+      case 1:
+        return "One";
+      case 2:
+        return "Two";
+      case 3:
+        return "Three";
+      case 4:
+        return "Four";
+      case 5:
+        return "Five";
+      case 6:
+        return "Six";
+      case 7:
+        return "Seven";
+      case 8:
+        return "Eight";
+      case 9:
+        return "Nine";
+      default:
+        return "";
+    }
   }
 
   public String convert10To19(int num) {
-    return switch (num) {
-      case 10 -> "Ten";
-      case 11 -> "Eleven";
-      case 12 -> "Twelve";
-      case 13 -> "Thirteen";
-      case 14 -> "Fourteen";
-      case 15 -> "Fifteen";
-      case 16 -> "Sixteen";
-      case 17 -> "Seventeen";
-      case 18 -> "Eighteen";
-      case 19 -> "Nineteen";
-      default -> "";
-    };
+    switch (num) {
+      case 10:
+        return "Ten";
+      case 11:
+        return "Eleven";
+      case 12:
+        return "Twelve";
+      case 13:
+        return "Thirteen";
+      case 14:
+        return "Fourteen";
+      case 15:
+        return "Fifteen";
+      case 16:
+        return "Sixteen";
+      case 17:
+        return "Seventeen";
+      case 18:
+        return "Eighteen";
+      case 19:
+        return "Nineteen";
+      default:
+        return "";
+    }
   }
 
   public String convert20To90(int num) {
     num = (num / 10) * 10; // remove remainder
-    return switch (num) {
-      case 20 -> "Twenty";
-      case 30 -> "Thirty";
-      case 40 -> "Forty";
-      case 50 -> "Fifty";
-      case 60 -> "Sixty";
-      case 70 -> "Seventy";
-      case 80 -> "Eighty";
-      case 90 -> "Ninety";
-      default -> "";
-    };
+    switch (num) {
+      case 20:
+        return "Twenty";
+      case 30:
+        return "Thirty";
+      case 40:
+        return "Forty";
+      case 50:
+        return "Fifty";
+      case 60:
+        return "Sixty";
+      case 70:
+        return "Seventy";
+      case 80:
+        return "Eighty";
+      case 90:
+        return "Ninety";
+      default:
+        return "";
+    }
   }
 
   public String convert1To99(int num) {
