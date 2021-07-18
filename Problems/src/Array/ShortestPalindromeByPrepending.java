@@ -45,4 +45,25 @@ public class ShortestPalindromeByPrepending {
 
     return true;
   }
+
+  // O(n) ?
+  public String shortestPalindrome2(String s) {
+    String concat = s + '.' + reverse(s);
+
+    int[] next = new int[concat.length()];
+
+    for (int i = 0, j = -1; i < next.length; j = next[i], i++) {
+      while (j > -1 && concat.charAt(j + 1) != concat.charAt(i)) {
+        j = next[j];
+      }
+
+      if (i > 0 && concat.charAt(j + 1) == concat.charAt(i)) {
+        next[i] = j + 1;
+      } else {
+        next[i] = -1;
+      }
+    }
+    return reverse(s.substring(next[next.length - 1] + 1)) + s;
+  }
+
 }
