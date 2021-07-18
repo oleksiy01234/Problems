@@ -1,55 +1,53 @@
 package LinkedList;
 
-import java.util.Stack;
+import DataStructures.Node.ListNode;
 
 /**
- * AddTwoNumbers
+ * 2. Add Two Numbers
+ * https://leetcode.com/problems/add-two-numbers/
+ * <p>
+ * You are given two non-empty linked lists representing two non-negative integers.
+ * The digits are storedin reverse order and each of their nodes contain a single digit.
+ * Add the two numbers and return it as a linked list.
+ * <p>
+ * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ * <p>
+ * Example:
+ * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+ * Output: 7 -> 0 -> 8
+ * Explanation: 342 + 465 = 807.
  */
 public class AddTwoNumbers {
 
-  public class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-      val = x;
-    }
-  }
-
+  /*
+    Numbers are stored in REVERSE order, ie least significant digit is first: 2 -> 4 -> 3 = 342
+    Input: l1 = [2,4,3], l2 = [5,6,4]
+    Output: [7,0,8]
+    Explanation: 342 + 465 = 807.
+   */
   public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-    Stack<Integer> s1 = new Stack<>();
-    Stack<Integer> s2 = new Stack<>();
-
-    fillStack(l1, s1);
-    fillStack(l2, s2);
-
-    ListNode newHead = null;
-
+    ListNode preHead = new ListNode();
+    ListNode n = preHead;
     boolean carry = false;
-    while (!s1.isEmpty() || !s2.isEmpty() || carry) {
-      int sum = carry ? 1 : 0;
 
-      if (s1.isEmpty()) {
-        sum += s2.pop();
-      } else if (s2.isEmpty()) {
-        sum += s1.pop();
-      } else {
-        sum += s1.pop() + s2.pop();
+    while (carry || l1 != null || l2 != null) {
+      int num = carry ? 1 : 0;
+
+      if (l1 != null) {
+        num += l1.val;
+        l1 = l1.next;
       }
 
-      ListNode n = new ListNode(sum % 10);
-      n.next = newHead;
-      newHead = n;
-      carry = sum > 9;
+      if (l2 != null) {
+        num += l2.val;
+        l2 = l2.next;
+      }
+
+      n.next = new ListNode(num % 10);
+      n = n.next;
+      carry = num >= 10;
     }
 
-    return newHead;
-  }
-
-  void fillStack(ListNode l, Stack<Integer> s) {
-    while (l != null) {
-      s.add(l.val);
-      l = l.next;
-    }
+    return preHead.next;
   }
 }
