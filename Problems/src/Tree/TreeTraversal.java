@@ -1,12 +1,8 @@
 package Tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
-
 import DataStructures.Node.TreeNode;
+
+import java.util.*;
 
 class TreeTraversal {
   public List<Integer> preorderTraversal(TreeNode n) {
@@ -63,12 +59,9 @@ class TreeTraversal {
 
   public List<List<Integer>> levelOrder(TreeNode root, boolean topToBottom) {
     List<List<Integer>> results = new LinkedList<>();
-    if (root == null) {
-      return results;
-    }
 
     Queue<TreeNode> queue = new LinkedList<>();
-    queue.add(root);
+    addToQueue(queue, root);
 
     while (!queue.isEmpty()) {
       List<Integer> thisLevel = new ArrayList<>();
@@ -98,12 +91,9 @@ class TreeTraversal {
 
   public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
     List<List<Integer>> results = new LinkedList<>();
-    if (root == null) {
-      return results;
-    }
 
     Queue<TreeNode> queue = new LinkedList<>();
-    queue.add(root);
+    addToQueue(queue, root);
     boolean rightToLeft = false;
 
     while (!queue.isEmpty()) {
@@ -126,5 +116,6 @@ class TreeTraversal {
     }
 
     return results;
+
   }
 }
