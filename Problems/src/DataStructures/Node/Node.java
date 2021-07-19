@@ -8,7 +8,8 @@ public class Node {
 	public Node prev;
 	public Node next;
 	public Node parent;
-	public int minUnder;
+	public int min;
+	public int max;
 	public Node[] children;
 	public static int count = 0;
 

@@ -14,10 +14,10 @@ class Stack {
 	void push(int n) {
 		Node newTop = new Node(n);
 		if (top != null) {
-			newTop.minUnder = Util.min(n, top.minUnder);
+			newTop.min = Util.min(n, top.min);
 			newTop.next = top;
 		} else {
-			newTop.minUnder = n;
+			newTop.min = n;
 		}
 		top = newTop;
 		size++;
@@ -48,7 +48,7 @@ class Stack {
 			System.out.println("Stack is empty. Returning -1");
 			return -1;
 		}
-		return top.minUnder;
+		return top.min;
 	}
 
 }
