@@ -1,36 +1,51 @@
 package Sort;
 
-import java.util.Collections;
-import java.util.List;
-
 public class DutchNationalFlag {
-  public enum Color {
-    RED, WHITE, BLUE
-  }
+    public void sortColors(int[] a) {
+        int lo = 0, curr = 0, hi = a.length - 1;
 
-  public static void dutchFlagPartition(int pivotIndex, List<Color> a) {
-    Color pivot = a.get(pivotIndex);
-
-    // First pass: group elements smaller than pivot
-    int smaller = 0;
-    for (int i = 0; i < a.size(); i++) {
-      if (a.get(i).ordinal() < pivot.ordinal()) {
-        Collections.swap(a, smaller, i);
-        smaller++;
-      }
+        while (curr <= hi) {
+            if (a[curr] == 0) {
+                swap(a, curr, lo);
+                curr++;
+                lo++;
+            } else if (a[curr] == 2) {
+                swap(a, curr, hi);
+                hi--;
+            } else { // a[curr] is 1
+                curr++;
+            }
+        }
     }
 
-    // Second pass: group elements larger than pivot
-    int larger = a.size() - 1;
-    for (int i = a.size() - 1; i >= 0; i--) {
-      if (a.get(i).ordinal() < pivot.ordinal()) {
-        break;
-      }
-
-      if (a.get(i).ordinal() > pivot.ordinal()) {
-        Collections.swap(a, larger, i);
-        larger--;
-      }
+    private void swap(int[] a, int i1, int i2) {
+        int tmp = a[i1];
+        a[i1] = a[i2];
+        a[i2] = tmp;
     }
-  }
+
+    // two pass
+    public void sortColors2(int[] a) {
+        int zeroes = 0;
+        int ones = 0;
+
+        for (int n : a) {
+            if (n == 0) {
+                zeroes++;
+            } else if (n == 1) {
+                ones++;
+            }
+        }
+
+        for (int i = 0; i < a.length; i++) {
+            if (i < zeroes) {
+                a[i] = 0;
+            } else if (i < zeroes + ones) {
+                a[i] = 1;
+            } else {
+                a[i] = 2;
+            }
+        }
+
+    }
 }
